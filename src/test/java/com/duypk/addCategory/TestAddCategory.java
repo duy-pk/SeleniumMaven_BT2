@@ -4,16 +4,12 @@ import com.duypk.common.BaseTest;
 import com.duypk.locator.LocatorCMS;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.testng.annotations.Test;
 
 public class TestAddCategory extends BaseTest {
-    public static void main(String[] args) {
-        createBrowser("Chrome");
-        driver.get(LocatorCMS.cmsURL);
 
-        //dang nhap tai khoan
-        driver.findElement(By.xpath(LocatorCMS.loginInputEmail)).sendKeys("admin@example.com");
-        driver.findElement(By.xpath(LocatorCMS.loginInputPassword)).sendKeys("123456");
-        driver.findElement(By.xpath(LocatorCMS.loginLoginButton)).click();
+    @Test
+    public static void testAddCategory() {
 
         //Chon den Category
         driver.findElement(By.xpath(LocatorCMS.mainMenuProducts)).click();
@@ -68,6 +64,5 @@ public class TestAddCategory extends BaseTest {
         else {
             System.out.println("Add Category failed");
         }
-        closeBroser();
     }
 }
